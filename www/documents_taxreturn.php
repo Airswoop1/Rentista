@@ -10,7 +10,8 @@
 		<title>Rentista</title>
 	</head>
 	<body>
-		Nothing here yet. Except this.
+		Tax Return Upload Page
 		
+		<a href="documents_bankstatement.php">Next</a>
 	</body>
 </html>

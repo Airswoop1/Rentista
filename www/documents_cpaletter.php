@@ -10,7 +10,8 @@
 		<title>Rentista</title>
 	</head>
 	<body>
-		Nothing here yet. Except this.
+		CPA Letter Upload Page
 		
+		<a href="landlordrentalapplication.php">Next</a>
 	</body>
 </html>

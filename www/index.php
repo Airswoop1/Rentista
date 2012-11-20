@@ -5,9 +5,9 @@
 	<body>
 		
 		
-		blahblahblah
+		Welcome to Rentista, this is the index page.
 		
-		<a href="documents_overview.php">Click here to begin!</a>
+		<a href="terms.php">Click here to begin!</a>
 		
 	</body>
 </html>

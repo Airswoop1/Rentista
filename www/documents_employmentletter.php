@@ -10,7 +10,8 @@
 		<title>Rentista</title>
 	</head>
 	<body>
-		Nothing here yet. Except this.
+		Employment Letter Upload Page
 		
+		<a href="documents_taxreturn.php">Next</a>
 	</body>
 </html>

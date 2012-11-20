@@ -13,7 +13,7 @@
 		mysql_query($query) or die(mysql_error()); #submit data to main table
 		
 		setcookie("username", $_POST['username'], time()+(3600*1000), '/');
-		header('Location: documents_overview.php');
+		header('Location: terms.php');
 		}
 ?>
 

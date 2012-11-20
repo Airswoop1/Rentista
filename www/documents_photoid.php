@@ -10,7 +10,8 @@
 		<title>Rentista</title>
 	</head>
 	<body>
-		Nothing here yet. Except this.
+		Photo ID Upload Page
 		
+		<a href="documents_cpaletter.php">Next</a>
 	</body>
 </html>

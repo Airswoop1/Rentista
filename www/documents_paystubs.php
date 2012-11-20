@@ -10,7 +10,8 @@
 		<title>Rentista</title>
 	</head>
 	<body>
-		Nothing here yet. Except this.
+		Paystub Upload Page
 		
+		<a href="documents_employmentletter.php">Next</a>
 	</body>
 </html>

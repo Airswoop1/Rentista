@@ -10,7 +10,7 @@
 		<title>Rentista</title>
 	</head>
 	<body>
-		Nothing here yet. Except this.
+		Application Complete!
 		
 	</body>
 </html>

@@ -10,7 +10,9 @@
 		<title>Rentista</title>
 	</head>
 	<body>
-		Nothing here yet. Except this.
+		Landlord Rental Application <a href="complete.php">Next</a>
+		<br>
+		<iframe src="http://docs.google.com/viewer?url=jackfrisoli.com%2Fsample.docx&embedded=true" width="600" height="780" style="border: none;"></iframe>
 		
 	</body>
 </html>

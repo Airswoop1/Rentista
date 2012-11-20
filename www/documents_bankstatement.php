@@ -10,7 +10,8 @@
 		<title>Rentista</title>
 	</head>
 	<body>
-		Nothing here yet. Except this.
+		Bank Statement Upload Page
 		
+		<a href="documents_photoid.php">Next</a>
 	</body>
 </html>

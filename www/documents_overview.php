@@ -10,12 +10,11 @@
 		<title>Rentista</title>
 	</head>
 	<body>
-		
 		Documents Overview Page
 		<br>
 		<?php echo "Hello, " . $_COOKIE['username']; ?>
-		
-		
+		<br>
+		<a href="documents_paystubs.php">Next</a>
 		
 	</body>
 </html>
