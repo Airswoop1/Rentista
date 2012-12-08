@@ -1,0 +1,90 @@
+/* Global Styles */
+.cntr_contain {
+	margin: 0 auto;
+	width: 940px;
+	position: relative;
+}
+.clear_floats {
+	clear: both;
+}
+
+/* Main Navigation */
+.navbar.second {
+	background: #272D30;
+	height: 130px;
+	padding: 40px 0 0 0;
+}
+
+/* Secondary Navigation */
+.tenantPhoto {
+	float: left;
+	position: absolute;
+	top: 10px;
+}
+
+/********* Main Dashboard *********/
+#dash_contain {
+	width: 940px;
+	margin: 50px auto;
+}
+
+/* Left Column */
+#dash_contain #dash_lCol {
+	float: left;
+	width: 700px;
+	background: #fff;
+	-webkit-border-radius: 10px 10px 0 0;
+   	 -moz-border-radius: 10px 10px 0 0;
+        	border-radius: 10px 10px 0 0; 
+}
+#dash_contain #dash_lCol #dash_labels {
+	background: #3a3a3a;
+	height: 40px;
+  -webkit-border-radius: 10px 10px 0 0;
+   	 -moz-border-radius: 10px 10px 0 0;
+        	border-radius: 10px 10px 0 0; 
+}
+#dash_contain #dash_lCol li.task {
+	height: 150px;
+	background: #eaeaea;
+	border-bottom: 1px solid #B2B2B2;
+	border-top: 1px solid #fff;
+}
+#dash_contain #dash_lCol li.task.first { border-top: none; }
+#dash_contain #dash_lCol li.task.last { border-bottom: none; }
+
+/* Right Column */
+#dash_contain #dash_rCol {
+	float: right;
+	width: 220px;
+}
+#dash_contain #dash_rCol .rCol {
+	background: linear-gradient(white, white 25%, #E6E6E6) no-repeat scroll 0 0 #E6E6E6;
+	height: 400px;
+	width: inherit;
+	margin: 0 0 20px 0;
+}
+
+/********* Sticky Footer *********/
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 60px;
+}
+#footer {
+  background-color: #f5f5f5;
+}
