@@ -7,6 +7,9 @@
 .clear_floats {
 	clear: both;
 }
+li {
+	transition: all 0.1s ease-in-out 0s;
+}
 
 /* Main Navigation */
 .navbar.second {
@@ -33,6 +36,7 @@
 	float: left;
 	width: 700px;
 	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 	-webkit-border-radius: 10px 10px 0 0;
    	 -moz-border-radius: 10px 10px 0 0;
         	border-radius: 10px 10px 0 0; 
@@ -40,18 +44,66 @@
 #dash_contain #dash_lCol #dash_labels {
 	background: #3a3a3a;
 	height: 40px;
+	border-bottom: 1px solid #fff;
   -webkit-border-radius: 10px 10px 0 0;
    	 -moz-border-radius: 10px 10px 0 0;
         	border-radius: 10px 10px 0 0; 
 }
+#dash_contain #dash_lCol #dash_labels li {
+	float: left;
+	color: #fff;
+}
 #dash_contain #dash_lCol li.task {
 	height: 150px;
-	background: #eaeaea;
-	border-bottom: 1px solid #B2B2B2;
+	background: linear-gradient(white, white 25%, #F6F6F6) no-repeat scroll 0 0 #E6E6E6;
+	border-bottom: 1px solid #D2D2D2;
 	border-top: 1px solid #fff;
+	position: relative;
+	padding: 0 15px;
 }
 #dash_contain #dash_lCol li.task.first { border-top: none; }
 #dash_contain #dash_lCol li.task.last { border-bottom: none; }
+#dash_contain #dash_lCol li.task .task_inner {
+	position: absolute;
+	width: 96%;
+	height: 82%;
+	left: 12px;
+	top: 11px;
+	background: #fff;
+	border: 1px solid #D2D2D2;
+  -webkit-border-radius: 10px;
+ 	 	 -moz-border-radius: 10px;
+      	  border-radius: 10px; 
+}
+#dash_contain #dash_lCol li.task:hover {
+}
+#dash_contain #dash_lCol li.task .task_label {
+	position: absolute;
+	width: 90px;
+	height: 150px;
+	left: -90px;
+	text-align: center;
+	background: #1489e2; /* Old browsers */
+	background: -moz-linear-gradient(top,  #1489e2 0%, #207cca 98%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1489e2), color-stop(98%,#207cca)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #1489e2 0%,#207cca 98%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #1489e2 0%,#207cca 98%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #1489e2 0%,#207cca 98%); /* IE10+ */
+	background: linear-gradient(to bottom,  #1489e2 0%,#207cca 98%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1489e2', endColorstr='#207cca',GradientType=0 ); /* IE6-9 */
+	-webkit-border-radius: 5px 0 0 5px;
+ 	 	 -moz-border-radius: 5px 0 0 5px;
+      	  border-radius: 5px 0 0 5px; 
+}
+#dash_contain #dash_lCol li.task .task_label p {
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Specific Tasks */
+#dash_contain #dash_lCol #agree {
+	height: 200px;
+}
 
 /* Right Column */
 #dash_contain #dash_rCol {
@@ -59,10 +111,44 @@
 	width: 220px;
 }
 #dash_contain #dash_rCol .rCol {
+	position: relative;
 	background: linear-gradient(white, white 25%, #E6E6E6) no-repeat scroll 0 0 #E6E6E6;
-	height: 400px;
 	width: inherit;
 	margin: 0 0 20px 0;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 5px;
+ 	 	 -moz-border-radius: 5px;
+      	  border-radius: 5px; 
+}
+#dash_contain #dash_rCol .rCol .info_blip { 
+	font-family: georgia, serif;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 13px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	-webkit-border-radius: 500px;
+     -moz-border-radius: 500px;
+          border-radius: 500px;
+}
+#dash_contain #dash_rCol #prospect {
+	height: 400px;
+}
+#dash_contain #dash_rCol #group li {
+	border-bottom: 1px solid #D2D2D2;
+	border-top: 1px solid #fff;
+	padding: 12px 5px;
+}
+#dash_contain #dash_rCol #group li.first {
+	border-top: 1px solid #D2D2D2;
+}
+#dash_contain #dash_rCol #group li.last {
+	border-bottom: 0;
+}
+#dash_contain #dash_rCol #group li:hover {
+	background: #fff; 
+	cursor: pointer;
 }
 
 /********* Sticky Footer *********/
