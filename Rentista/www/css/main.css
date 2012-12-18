@@ -14,55 +14,64 @@ li {
 /* Main Navigation */
 .navbar.second {
 	background: #272D30;
-	height: 130px;
+	height: 150px;
 	padding: 40px 0 0 0;
 }
 
 /* Secondary Navigation */
-.tenantPhoto {
-	float: left;
+.navbar.second .span1 {
+	margin-top: 10px;
+}
+.navbar.second .tenantPhoto {
 	position: absolute;
 	top: 10px;
+}
+.navbar.second .cntr_contain .prospect {
+	margin-left: 0;
+	margin-top: 30px;
+	border-radius: 0;
+	border-color: #373D40;
+	float: left;
+}
+.navbar.second .cntr_contain .prospect p {
+	margin-bottom: none;
+	color: #fff;
+}
+.navbar.second .cntr_contain .prospect p.prospect_name {
+	font-size: 18px;
+}
+.navbar.second .cntr_contain .broker {
+	float: right;
+	margin-top: 15px;
+}
+
+/********* Intro Well *********/
+.intro.well {
+	background-color: #43ADDA;
+	color: #fff;
 }
 
 /********* Main Dashboard *********/
 #dash_contain {
 	width: 940px;
-	margin: 50px auto;
+	margin: 30px auto;
 }
 
 /* Left Column */
 #dash_contain #dash_lCol {
 	float: left;
 	width: 700px;
-	background: #fff;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-	-webkit-border-radius: 10px 10px 0 0;
-   	 -moz-border-radius: 10px 10px 0 0;
-        	border-radius: 10px 10px 0 0; 
 }
-#dash_contain #dash_lCol #dash_labels {
-	background: #3a3a3a;
-	height: 40px;
-	border-bottom: 1px solid #fff;
-  -webkit-border-radius: 10px 10px 0 0;
-   	 -moz-border-radius: 10px 10px 0 0;
-        	border-radius: 10px 10px 0 0; 
-}
-#dash_contain #dash_lCol #dash_labels li {
-	float: left;
-	color: #fff;
-}
+
 #dash_contain #dash_lCol li.task {
 	height: 150px;
-	background: linear-gradient(white, white 25%, #F6F6F6) no-repeat scroll 0 0 #E6E6E6;
-	border-bottom: 1px solid #D2D2D2;
-	border-top: 1px solid #fff;
 	position: relative;
-	padding: 0 15px;
+	width: inherit;
+	background-color: #F5F5F5;
+    border: 1px solid #D7D7D7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
 }
-#dash_contain #dash_lCol li.task.first { border-top: none; }
-#dash_contain #dash_lCol li.task.last { border-bottom: none; }
 #dash_contain #dash_lCol li.task .task_inner {
 	position: absolute;
 	width: 96%;
@@ -75,29 +84,21 @@ li {
  	 	 -moz-border-radius: 10px;
       	  border-radius: 10px; 
 }
-#dash_contain #dash_lCol li.task:hover {
+#dash_contain #dash_lCol li.task .banner {
+	width: 100%;
+	background-color: #EAEAEA;
+	border-bottom: 1px solid #C4C4C4;
 }
-#dash_contain #dash_lCol li.task .task_label {
-	position: absolute;
-	width: 90px;
-	height: 150px;
-	left: -90px;
-	text-align: center;
-	background: #1489e2; /* Old browsers */
-	background: -moz-linear-gradient(top,  #1489e2 0%, #207cca 98%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1489e2), color-stop(98%,#207cca)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #1489e2 0%,#207cca 98%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #1489e2 0%,#207cca 98%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #1489e2 0%,#207cca 98%); /* IE10+ */
-	background: linear-gradient(to bottom,  #1489e2 0%,#207cca 98%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1489e2', endColorstr='#207cca',GradientType=0 ); /* IE6-9 */
-	-webkit-border-radius: 5px 0 0 5px;
- 	 	 -moz-border-radius: 5px 0 0 5px;
-      	  border-radius: 5px 0 0 5px; 
+#dash_contain #dash_lCol li.task .banner h4 {
+	line-height: 30px;
+	margin-left: 10px;	
+	margin-top: 0;
+	display: inline;
+	color: #5c5c5c;
 }
-#dash_contain #dash_lCol li.task .task_label p {
-	color: #fff;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+#dash_contain #dash_lCol li.task .banner .label {
+	float: right;
+	margin:  4px;
 }
 
 /* Specific Tasks */
@@ -108,17 +109,14 @@ li {
 /* Right Column */
 #dash_contain #dash_rCol {
 	float: right;
-	width: 220px;
 }
 #dash_contain #dash_rCol .rCol {
 	position: relative;
-	background: linear-gradient(white, white 25%, #E6E6E6) no-repeat scroll 0 0 #E6E6E6;
-	width: inherit;
-	margin: 0 0 20px 0;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 5px;
- 	 	 -moz-border-radius: 5px;
-      	  border-radius: 5px; 
+	width: 220px;
+	background-color: #F5F5F5;
+    border: 1px solid #E3E3E3;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
 }
 #dash_contain #dash_rCol .rCol .info_blip { 
 	font-family: georgia, serif;
@@ -128,12 +126,17 @@ li {
 	position: absolute;
 	right: 5px;
 	top: 5px;
-	-webkit-border-radius: 500px;
-     -moz-border-radius: 500px;
-          border-radius: 500px;
 }
-#dash_contain #dash_rCol #prospect {
-	height: 400px;
+#dash_contain #dash_rCol #prospect p,
+#dash_contain #dash_rCol #group p  {
+	background-color: #272D30;
+	color: #fff;
+	line-height: 34px;
+	padding-left: 10px;
+	margin-bottom: 0;
+}
+#dash_contain #dash_rCol .pad {
+	padding: 15px;
 }
 #dash_contain #dash_rCol #group li {
 	border-bottom: 1px solid #D2D2D2;
@@ -141,7 +144,7 @@ li {
 	padding: 12px 5px;
 }
 #dash_contain #dash_rCol #group li.first {
-	border-top: 1px solid #D2D2D2;
+	border-top: none;
 }
 #dash_contain #dash_rCol #group li.last {
 	border-bottom: 0;
@@ -172,5 +175,5 @@ body {
   height: 60px;
 }
 #footer {
-  background-color: #f5f5f5;
+  background-color: #191919;
 }
