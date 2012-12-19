@@ -1,0 +1,192 @@
+/* Global Styles */
+.cntr_contain {
+	margin: 0 auto;
+	width: 940px;
+	position: relative;
+}
+.clear_floats {
+	clear: both;
+}
+li {
+	transition: all 0.1s ease-in-out 0s;
+}
+
+/* Main Navigation */
+.navbar.second {
+	background: #393941;
+	height: 189px;
+	padding: 40px 0 0 0;
+}
+
+/* Secondary Navigation */
+.navbar.second .span1 {
+	margin-top: 10px;
+}
+.navbar.second .tenantPhoto {
+	position: absolute;
+	top: 10px;
+}
+.navbar.second .cntr_contain .prospect {
+	margin-left: 0;
+	margin-top: 20px;
+	border-radius: 0;
+	border-color: #373D40;
+	float: left;
+}
+.navbar.second .cntr_contain .prospect p {
+	margin-bottom: none;
+	color: #fff;
+}
+.navbar.second .cntr_contain .prospect p.prospect_name {
+	font-size: 18px;
+}
+
+
+/********* Intro Well *********/
+.intro.well {
+	background-color: #43ADDA;
+	color: #fff;
+}
+
+/********* Main Dashboard *********/
+#dash_contain {
+	width: 940px;
+	margin: 30px auto;
+}
+
+/* Left Column */
+#dash_contain #dash_lCol {
+	float: left;
+	width: 700px;
+}
+
+#dash_contain #dash_lCol li.task {
+	height: 150px;
+	position: relative;
+	width: inherit;
+	background-color: #F5F5F5;
+    border: 1px solid #D7D7D7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
+}
+#dash_contain #dash_lCol li.task .task_inner {
+	position: absolute;
+	width: 96%;
+	height: 82%;
+	left: 12px;
+	top: 11px;
+	background: #fff;
+	border: 1px solid #D2D2D2;
+  -webkit-border-radius: 10px;
+ 	 	 -moz-border-radius: 10px;
+      	  border-radius: 10px; 
+}
+#dash_contain #dash_lCol li.task .banner {
+	width: 100%;
+	background-color: #EAEAEA;
+	border-bottom: 1px solid #C4C4C4;
+}
+#dash_contain #dash_lCol li.task .banner h4 {
+	line-height: 30px;
+	margin-left: 10px;	
+	margin-top: 0;
+	display: inline;
+	color: #5c5c5c;
+}
+#dash_contain #dash_lCol li.task .banner .label {
+	float: right;
+	margin:  4px;
+}
+
+/* Specific Tasks */
+#dash_contain #dash_lCol #agree {
+	height: 200px;
+}
+
+/* Right Column */
+#dash_contain #dash_rCol {
+	float: right;
+}
+#dash_contain #dash_rCol .rCol {
+	position: relative;
+	width: 220px;
+	background-color: #fff;
+    border: 1px solid #E3E3E3;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+}
+#dash_contain #dash_rCol .rCol .info_blip { 
+	font-family: georgia, serif;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 13px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+#dash_contain #dash_rCol #prospect > span,
+#dash_contain #dash_rCol #group > span {
+	display: block;
+	background-color: #51515B;
+	color: #fff;
+	line-height: 34px;
+	padding-left: 10px;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 0.5px;
+}
+#dash_contain #dash_rCol .pad {
+	
+}
+#dash_contain #dash_rCol #group li {
+	border-bottom: 1px solid #D2D2D2;
+	border-top: 1px solid #fff;
+	padding: 12px 10px;
+}
+#dash_contain #dash_rCol #group li.first {
+	border-top: none;
+}
+#dash_contain #dash_rCol #group li.last {
+	border-bottom: 0;
+}
+#dash_contain #dash_rCol #group li:hover {
+	background: #fff; 
+	cursor: pointer;
+}
+#dash_contain #dash_rCol #group li img {
+	margin-right: 10px;
+}
+#dash_contain #dash_rCol #group li p {
+	display: inline;
+	font-size: 13px;
+    text-transform: uppercase;
+}
+#dash_contain #dash_rCol #group li .progress {
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+
+
+/********* Sticky Footer *********/
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 60px;
+}
+#footer {
+  background-color: #191919;
+}
