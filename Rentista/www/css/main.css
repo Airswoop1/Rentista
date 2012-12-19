@@ -13,8 +13,8 @@ li {
 
 /* Main Navigation */
 .navbar.second {
-	background: #272D30;
-	height: 150px;
+	background: #393941;
+	height: 189px;
 	padding: 40px 0 0 0;
 }
 
@@ -28,7 +28,7 @@ li {
 }
 .navbar.second .cntr_contain .prospect {
 	margin-left: 0;
-	margin-top: 30px;
+	margin-top: 20px;
 	border-radius: 0;
 	border-color: #373D40;
 	float: left;
@@ -40,10 +40,7 @@ li {
 .navbar.second .cntr_contain .prospect p.prospect_name {
 	font-size: 18px;
 }
-.navbar.second .cntr_contain .broker {
-	float: right;
-	margin-top: 15px;
-}
+
 
 /********* Intro Well *********/
 .intro.well {
@@ -113,10 +110,9 @@ li {
 #dash_contain #dash_rCol .rCol {
 	position: relative;
 	width: 220px;
-	background-color: #F5F5F5;
+	background-color: #fff;
     border: 1px solid #E3E3E3;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
-    margin-bottom: 20px;
 }
 #dash_contain #dash_rCol .rCol .info_blip { 
 	font-family: georgia, serif;
@@ -127,21 +123,25 @@ li {
 	right: 5px;
 	top: 5px;
 }
-#dash_contain #dash_rCol #prospect p,
-#dash_contain #dash_rCol #group p  {
-	background-color: #272D30;
+#dash_contain #dash_rCol #prospect > span,
+#dash_contain #dash_rCol #group > span {
+	display: block;
+	background-color: #51515B;
 	color: #fff;
 	line-height: 34px;
 	padding-left: 10px;
 	margin-bottom: 0;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 0.5px;
 }
 #dash_contain #dash_rCol .pad {
-	padding: 15px;
+	
 }
 #dash_contain #dash_rCol #group li {
 	border-bottom: 1px solid #D2D2D2;
 	border-top: 1px solid #fff;
-	padding: 12px 5px;
+	padding: 12px 10px;
 }
 #dash_contain #dash_rCol #group li.first {
 	border-top: none;
@@ -153,6 +153,19 @@ li {
 	background: #fff; 
 	cursor: pointer;
 }
+#dash_contain #dash_rCol #group li img {
+	margin-right: 10px;
+}
+#dash_contain #dash_rCol #group li p {
+	display: inline;
+	font-size: 13px;
+    text-transform: uppercase;
+}
+#dash_contain #dash_rCol #group li .progress {
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+
 
 /********* Sticky Footer *********/
 body {

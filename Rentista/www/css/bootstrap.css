@@ -164,7 +164,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #E7E7ED;
 }
 
 a {
@@ -5310,9 +5310,6 @@ input[type="submit"].btn.btn-mini {
   padding: 4px;
   line-height: 20px;
   border: 1px solid #ddd;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
@@ -5602,11 +5599,11 @@ a.badge:hover {
 .progress-danger .bar,
 .progress .bar-danger {
   background-color: #dd514c;
-  background-image: -moz-linear-gradient(top, #ee5f5b, #c43c35);
+  background-image: -moz-linear-gradient(top, #EE5F5B, #C43C35);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#c43c35));
   background-image: -webkit-linear-gradient(top, #ee5f5b, #c43c35);
   background-image: -o-linear-gradient(top, #ee5f5b, #c43c35);
-  background-image: linear-gradient(to bottom, #ee5f5b, #c43c35);
+  background-image: llinear-gradient(to bottom, #EE5F5B, #C43C35);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffc43c35', GradientType=0);
 }

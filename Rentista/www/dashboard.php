@@ -51,11 +51,11 @@
 		<div class="navbar second">
 			<div class="cntr_contain">
 				<!-- Prospect -->
-				<div class="span4 prospect">
+				<div class="span5 prospect">
 					<div class="row">
-						<div class="span1">
+						<div class="span2">
 							<a href="#TODO" class="thumbnail">
-								<img src="http://placehold.it/100x100">
+								<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/c50.50.621.621/s160x160/18707_10103647273167224_1201216139_n.jpg">
 							</a>
 						</div>
 						<div class="span3">
@@ -65,22 +65,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- Broker/Apartment 
-				<div class="span4 broker">
-					<div class="row">
-						<div class="span1">
-							<a href="#TODO" class="thumbnail">
-								<img src="http://placehold.it/100x100">
-							</a>
-						</div>
-						<div class="span3">
-							<p>Prospect</p>
-				          	<p><strong>Johnny Tenantbaum</strong></p>
-							<span class=" badge badge-warning">8 messages</span> <span class=" badge badge-info">15 followers</span>
-						</div>
-					</div>
-				</div>
-				-->					
+		
 			</div>
 		</div>
 
@@ -185,44 +170,38 @@ Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, 
 			<!-- Right Column -->
 			<div id="dash_rCol">
 				<h2>Progress</h2>
-				<!-- Prospect Progress -->
-				<div id="prospect" class="rCol">
-					<p>Prospect Progress</p>
-					<div class="pad">
-						<!-- Prospect Info Blip -->
-					  <div class="progress progress-striped">
-	  					<div class="bar bar-success" style="width: 50%;"></div>
-	  				</div>
-  				</div>
-				</div>
+
 				<!-- Group Progress -->
 				<div id="group" class="rCol">
-					<p>Team Progress</p>
+					<span>Team Progress</span>
 					<div class="pad">
-						<!-- Team Info Blip -->
 	  				<ul>
 	  					<li class="first">
-	  						<img src="http://placehold.it/35x35">
-	  						<div class="progress progress-striped">
-	  							<div class="bar bar-success" style="width: 50%;"></div>
+	  						<img src="http://dribbble.s3.amazonaws.com/users/14268/avatars/original/me.jpg?1335028411">
+	  						<p>Other Prospect 1</p>
+	  						<div class="progress progress-warning">
+	  							<div class="bar" style="width: 50%;" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-placement="top" rel="popover" class="btn" href="#" data-original-title="Popover on top"></div>
 	  						</div>
 	  					</li>
 	  					<li>
-	  						<img src="http://placehold.it/35x35">
-	  						<div class="progress progress-striped">
-	  							<div class="bar bar-success" style="width: 50%;"></div>
+	  						<img src="http://dribbble.s3.amazonaws.com/users/3856/avatars/original/littlenono.png?1330635344">
+	  						<p>Other Prospect 2</p>
+	  						<div class="progress progress-success">
+	  							<div class="bar" style="width: 80%;" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-placement="top" rel="popover" class="btn" href="#" data-original-title="Popover on top"></div>
 	  						</div>
 	  					</li>
 	  					<li>
-	  						<img src="http://placehold.it/35x35">
-	  						<div class="progress progress-striped">
-	  							<div class="bar bar-success" style="width: 50%;"></div>
+	  						<img src="http://dribbble.s3.amazonaws.com/users/41613/avatars/original/av.png?1314126990">
+	  						<p>Other Prospect 3</p>
+	  						<div class="progress progress-warning">
+	  							<div class="bar" style="width: 50%;" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-placement="top" rel="popover" class="btn" href="#" data-original-title="Popover on top"></div>
 	  						</div>
 	  					</li>
 	  					<li class="last">
-	  						<img src="http://placehold.it/35x35">
-	  						<div class="progress progress-striped">
-	  							<div class="bar bar-success" style="width: 50%;"></div>
+	  						<img src="http://dribbble.s3.amazonaws.com/users/96287/avatars/original/Screen%20shot%202012-03-12%20at%202.58.41%20PM.png?1331578761">
+	  						<p>Other Prospect 4</p>
+	  						<div class="progress progress-danger">
+	  							<div class="bar" style="width: 20%;" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-placement="top" rel="popover" class="btn" href="#" data-original-title="Popover on top"></div>
 	  						</div>
 	  					</li>
 	  				</ul>
