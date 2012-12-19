@@ -51,17 +51,24 @@
 		<div class="navbar second">
 			<div class="cntr_contain">
 				<!-- Prospect -->
-				<div class="span5 prospect">
+				<div class="span6 prospect">
 					<div class="row">
 						<div class="span2">
 							<a href="#TODO" class="thumbnail">
 								<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/c50.50.621.621/s160x160/18707_10103647273167224_1201216139_n.jpg">
 							</a>
 						</div>
-						<div class="span3">
+						<div class="span4">
 							<p>Prospect</p>
 				      <p class="prospect_name"><strong>Johnny Tenantbaum</strong></p>
-							<span class=" badge badge-warning">8 messages</span> <span class=" badge badge-info">15 followers</span>
+							<!-- <span class=" badge badge-warning">8 messages</span> <span class=" badge badge-info">15 followers</span> -->
+							<div id="badge_progress">
+								<a href="#" class="task_badge"></a>
+								<a href="#" class="task_badge"></a>
+								<a href="#" class="task_badge"></a>
+								<a href="#" class="task_badge"></a>
+								<a href="#" class="task_badge"></a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -69,22 +76,48 @@
 			</div>
 		</div>
 
-		<!-- Intro Well
+		<!-- Intro Well -->
 		<div class="cntr_contain">
 			<div class="intro well">
-				<h3>Welcome to your CitHabitats Prospect Portal</h3>
+				<h4>Welcome to your CitHabitats Prospect Portal</h4>
 				<p>File Upload widget with multiple file selection, drag&drop support, progress bars and preview images for jQuery.
 Supports cross-domain, chunked and resumable file uploads and client-side image resizing.
 Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, Go etc.) that supports standard HTML form file uploads.</p>
 			</div>
-		</div>-->
+		</div>
 
 		<!-- Main Dashboard -->
 		<div id="dash_contain">
 			<!-- Left Column -->
 			<div id="dash_lCol">
+				<h4>Tasks</h4>
+
+		<!-- Experimental Table
+		<table class="table table-condensed table-hover">
+    <thead>
+    <tr>
+    <th class="span1"></th>
+    <th class="span3"></th>
+    <th class="span2"></th>
+    <th class="span4"></th>
+    <th class="span2"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><input type="checkbox"> <a href="#"><i class="icon-star-empty"></i></a></td>
+    <td><strong>Broker Agreement</strong></td>
+    <td><span class="label pull-right">Notifications</span></td>
+    <td><strong>Message body goes here</strong></td>
+    <td><strong>11:23 PM</strong></td>
+    </tr>
+    </tbody>
+    </table>
+  	-->
+
+
+
 				<!-- Tasks -->
-				<h2>Tasks</h2>
 				<ul>
 					<li id="agree" class="task first">
 						<div class="banner">
@@ -150,7 +183,19 @@ Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, 
 					</li>
 
 					<li id="references" class="task">
-						<h4>References</h4>
+						<div class="row">
+							<div class="span5">
+								<h4><a href="#">Lesson 1</a></h4>
+								<p>Overview of the course, prerequisites, instructor contact information, syllabus, location information</p>
+							</div>
+							<div class="span3">
+								Progress: <span class="pull-right strong">36%</span>
+								<div class="progress">
+									<div class="bar" style="width: 36%;"></div>
+								</div>
+							</div>
+						</div>
+						<hr>
 					</li>
 					<li class="task">
 						<h4>Photo ID</h4>
@@ -169,7 +214,7 @@ Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, 
 
 			<!-- Right Column -->
 			<div id="dash_rCol">
-				<h2>Progress</h2>
+				<h4>Progress</h4>
 
 				<!-- Group Progress -->
 				<div id="group" class="rCol">

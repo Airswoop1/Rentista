@@ -13,8 +13,8 @@ li {
 
 /* Main Navigation */
 .navbar.second {
-	background: #393941;
-	height: 189px;
+	background: #4D90FE;
+	height: 155px;
 	padding: 40px 0 0 0;
 }
 
@@ -40,12 +40,26 @@ li {
 .navbar.second .cntr_contain .prospect p.prospect_name {
 	font-size: 18px;
 }
+.navbar.second .cntr_contain .prospect #badge_progress {
+
+}
+.navbar.second .cntr_contain .prospect #badge_progress .task_badge {
+	background: url("../img/task-icons.png") repeat scroll -8px -8px transparent;
+	display: block;
+	width: 45px;
+	height: 45px;
+	float: left;
+	margin: 0 5px;
+}
+.navbar.second .cntr_contain .prospect .row .thumbnail {
+ width: 110px;
+}
 
 
 /********* Intro Well *********/
 .intro.well {
-	background-color: #43ADDA;
-	color: #fff;
+	background-color: #F5F5F5;
+	color: #5C5C5C;
 }
 
 /********* Main Dashboard *********/
@@ -64,10 +78,9 @@ li {
 	height: 150px;
 	position: relative;
 	width: inherit;
-	background-color: #F5F5F5;
-    border: 1px solid #D7D7D7;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
-    margin-bottom: 20px;
+  border: 1px solid #D7D7D7;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  margin-bottom: 20px;
 }
 #dash_contain #dash_lCol li.task .task_inner {
 	position: absolute;
@@ -87,11 +100,13 @@ li {
 	border-bottom: 1px solid #C4C4C4;
 }
 #dash_contain #dash_lCol li.task .banner h4 {
-	line-height: 30px;
+	line-height: 33px;
 	margin-left: 10px;	
 	margin-top: 0;
 	display: inline;
 	color: #5c5c5c;
+	text-transform: uppercase;
+	font-size: 14px;
 }
 #dash_contain #dash_lCol li.task .banner .label {
 	float: right;
@@ -100,7 +115,7 @@ li {
 
 /* Specific Tasks */
 #dash_contain #dash_lCol #agree {
-	height: 200px;
+	height: 110px;
 }
 
 /* Right Column */
@@ -155,6 +170,7 @@ li {
 }
 #dash_contain #dash_rCol #group li img {
 	margin-right: 10px;
+	width: 50px;
 }
 #dash_contain #dash_rCol #group li p {
 	display: inline;
