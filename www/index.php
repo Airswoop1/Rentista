@@ -1,7 +1,8 @@
 <html>
-	<head>
-		<title>Rentista</title>
-	</head>
+<head>
+<title>Rentista</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,600,300' rel='stylesheet' type='text/css'>
+</head>
 	<body>
 		
 		
