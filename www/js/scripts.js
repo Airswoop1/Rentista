@@ -9,6 +9,7 @@ $(function() {
 
 	// Popover test on team progress
 
+
 	$('.progress .bar').each(function() {
 		$(this).popover({trigger : 'hover'});
 	});

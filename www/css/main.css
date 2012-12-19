@@ -1,3 +1,49 @@
+/* */
+#col1 .span3 {
+	
+}
+.icon-remove-sign {
+    float: right;
+    opacity: 0.2;
+}
+#progress li a {
+	background-color: #EEEEEE;
+}
+
+#main h4 {
+	font-size: 14px;
+	letter-spacing: 0.4px;
+	text-transform: uppercase;
+	font-weight: 300;
+	display: inline-block;
+}
+
+#broker .task_badge { background-position: -248px -8px; }
+#employ_letter .task_badge { background-position: -188px -8px; }
+#pay_stub .task_badge { background-position: -68px -8px; }
+#tax_return .task_badge { background-position: -68px -8px; }
+#references .task_badge { background-position: -128px -8px; }
+#bank_statement .task_badge { background-position: -68px -8px; }
+#photo_id .task_badge { background-position: -8px -8px; }
+.task_badge { 
+	background: url("../img/task-icons.png") repeat scroll -8px -8px transparent; background-position: 0 0; 
+	display: block;
+	width: 45px;
+	height: 45px;
+	margin: 0 5px;
+	position: absolute;
+	right: -5px;
+	top: 0;
+}
+
+
+
+
+
+
+
+
+
 /* Global Styles */
 .cntr_contain {
 	margin: 0 auto;
@@ -43,14 +89,7 @@ li {
 .navbar.second .cntr_contain .prospect #badge_progress {
 
 }
-.navbar.second .cntr_contain .prospect #badge_progress .task_badge {
-	background: url("../img/task-icons.png") repeat scroll -8px -8px transparent;
-	display: block;
-	width: 45px;
-	height: 45px;
-	float: left;
-	margin: 0 5px;
-}
+
 .navbar.second .cntr_contain .prospect .row .thumbnail {
  width: 110px;
 }
