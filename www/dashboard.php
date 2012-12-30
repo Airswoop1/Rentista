@@ -76,7 +76,7 @@
 			<div id="col1" class="row">
 				<div id="col1_nav" class="span3">
 					<div data-spy="affix" data-offset-top="162" class="nav_contain"> <!-- Contain col for affix -->
-						<h4>Checklist</h4>
+						<!--<i class="icon-th-list"></i>--><h4>Checklist</h4>
 						<ul class="nav nav-tabs nav-stacked">
 	    				<li><a href="#broker"><i class="icon-remove-sign"></i>Broker Agreement</a></li>
 	    				<li><a href="#employ_letter"><i class="icon-remove-sign"></i>Employment Letter</a></li>
@@ -85,11 +85,19 @@
 	    				<li><a href="#references"><i class="icon-remove-sign"></i>References</a></li>
 	    				<li><a href="#bank_statement"><i class="icon-remove-sign"></i>Bank Statement</a></li>
 	    				<li><a href="#photo_id"><i class="icon-remove-sign"></i>Identification</a></li>
-	    			</ul>
-	    			<ul class="nav nav-tabs nav-stacked" id="progress">
-	    				<li><a href="">2/10 Tasks Complete</a></li>
-	    			</ul>
-	    		</div>
+    				</ul>
+    				<ul class="nav nav-tabs nav-stacked" id="personal_progress">
+    					<li><a href="">2/10 Tasks Complete</a></li>
+    				</ul>
+    				<h4>Roommate Progress</h4>
+    				<ul class="nav nav-tabs nav-stacked" id="roommate_progress">
+    					<li><img src="http://dribbble.s3.amazonaws.com/users/1333/avatars/original/photo.JPG?1352485309"><a href="" class="text-error">2/10 Tasks Complete</a></li>
+    					<li><img src="http://dribbble.s3.amazonaws.com/users/2645/avatars/original/morgan.png?1344727359"><a href="" class="text-warning">5/10 Tasks Complete</a></li>
+    					<li><img src="http://dribbble.s3.amazonaws.com/users/10149/avatars/original/kerem-sir.jpg?1347845126"><a href="" class="text-warning">6/10 Tasks Complete</a></li>
+    					<li><img src="http://dribbble.s3.amazonaws.com/users/565/avatars/original/Josh_Hemsley.jpeg?1305129328"><a href="" class="text-success">10/10 Tasks Complete</a></li>
+    				</ul>
+
+    			</div>
 				</div>
 				<div class="span9" id="main">
 					<h4>Broker Agreement</h4>
@@ -119,8 +127,48 @@
 				    </div>		
 					</div>
 					<h4>Employment Letter</h4>
+
+
+					<!-- Uploader -->
 					<div id="employ_letter" class="hero-unit">
 						<a href="#" class="task_badge"></a>
+						<!-- The file upload form used as target for the file upload widget -->
+					    <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
+					        <!-- Redirect browsers with JavaScript disabled to the origin page -->
+					        <noscript><input type="hidden" name="redirect" value="http://blueimp.github.com/jQuery-File-Upload/"></noscript>
+					        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+					        <div class="row fileupload-buttonbar">
+					            <div class="span7">
+					                <!-- The fileinput-button span is used to style the file input field as button -->
+					                <span class="btn btn-success fileinput-button">
+					                    <i class="icon-plus icon-white"></i>
+					                    <span>Add files...</span>
+					                    <input type="file" name="files[]" multiple>
+					                </span>
+					                <button type="submit" class="btn btn-primary start">
+					                    <i class="icon-upload icon-white"></i>
+					                    <span>Start upload</span>
+					                </button>
+					            </div>
+					            <!-- The global progress information -->
+					            <div class="span5 fileupload-progress fade">
+					                <!-- The global progress bar -->
+					                <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+					                    <div class="bar" style="width:0%;"></div>
+					                </div>
+					                <!-- The extended global progress information -->
+					                <div class="progress-extended">&nbsp;</div>
+					            </div>
+					        </div>
+					        <!-- The loading indicator is shown during file processing -->
+					        <div class="fileupload-loading"></div>
+					        <br>
+					        <!-- The table listing the files available for upload/download -->
+					        <table role="presentation" class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
+					    </form>
+					    <!-- End Uploader -->
+
+
 					</div>
 					<h4>PayStub</h4>
 					<div id="pay_stub" class="hero-unit">

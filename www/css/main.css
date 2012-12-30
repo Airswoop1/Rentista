@@ -6,16 +6,35 @@
     float: right;
     opacity: 0.2;
 }
-#progress li a {
+#personal_progress {
+	margin-bottom: 40px;
+}
+#personal_progress li a {
 	background-color: #EEEEEE;
 }
-
-#main h4 {
-	font-size: 14px;
-	letter-spacing: 0.4px;
-	text-transform: uppercase;
-	font-weight: 300;
+#roommate_progress li {
+	margin: 10px 0;
+}
+#roommate_progress li img {
+	width: 40px;
+	height: 40px;
+}
+#roommate_progress li a {
 	display: inline-block;
+}
+
+
+#col1 h4 {
+	display: inline-block;
+
+}
+#main h4 {
+    color: #7A7A7A;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    text-transform: uppercase; 
 }
 
 #broker .task_badge { background-position: -248px -8px; }
