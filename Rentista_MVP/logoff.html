@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title>Log Off</title>
+</head>
+<body>
+<?php
+session_start();
+$_SESSION = array();
+
+session_destroy();
+?>
+<p><strong>You have now been logged off.</strong></p><br>
+<div><strong><a href="index.html">Home</a></strong></div>
+</body>
+</html>

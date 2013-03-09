@@ -1,0 +1,112 @@
+<html>
+<head>
+	<title>Prospect Upload</title>
+</head>
+<body>
+	<p>Welcome to the Rentista Prospect Upload page!</p>
+	<div><strong><a href="logoff.html">Log Off</a></strong></div>
+
+<?php 
+	include './prospectWelcome.php';
+
+?>
+
+
+<p>Welcome <?php echo $firstname; echo " "; echo $lastname; ?> </p>
+<p>The current status of your documentation upload is as follows: <br></p>
+
+
+<table border="1">
+	<tr>
+		<th>Document</th>
+		<th>Status</th>
+		<th>Approved?</th>
+	</tr>
+	<tr>
+		<td>ID</td>
+		<td><?php echo $ID; ?></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Bank Statement 1</td>
+		<td><?php echo $BS1; ?></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Bank Statement 2</td>
+		<td><?php echo $BS2; ?></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Employment Letter</td>
+		<td><?php echo $EL; ?></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Pay Stub</td>
+		<td><?php echo $PS; ?></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>References</td>
+		<td><?php echo $REF ?></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>W2</td>
+		<td><?php echo $W2; ?></td>
+		<td></td>
+	</tr>
+
+</table>
+
+
+<p>You are currently 
+	<?php 
+		$percentComplete = $uploadCount/7; 
+		$percentComplete = $percentComplete*100; 
+		$percent = number_format($percentComplete, 0);
+		echo $percent;
+		?>% complete! </p>
+	 
+
+<p>Your group is <?php echo calcPercentComplete("group",$groupID); ?>% complete.<br>  
+
+		<?php
+			$otherProspectQuery = "select * from prospect where g_id='".$groupID."' AND p_id!='".$prospectID."'";
+			$otherProspectResult = $dbcon->query($otherProspectQuery);
+			$numOtherProspects = $otherProspectResult->num_rows;
+
+			if($numOtherProspects<1){
+
+			}
+			else{
+				for($i=0;$i<$numOtherProspects;$i++){
+					$otherProspectRow = $otherProspectResult->fetch_assoc();
+					echo "~".$otherProspectRow['firstname']." ".$otherProspectRow['lastname']." is ".
+					calcPercentComplete("single",$otherProspectRow['p_id'])."% complete.<br>";	
+				}
+			}
+		?>
+	</p>
+
+	<p>Upload a Document: </p>
+	<form name="docUpload" action="prospectUpload.php" method="POST" enctype="multipart/form-data" >
+	<div><select name="docUploadDropdown">
+			<option value="ID">ID</option>
+			<option value="BS1">Bank Statement 1</option>
+			<option value="BS2">Bank Statement 2</option>
+			<option value="EL">Employment Letter</option>
+			<option value="PS">Pay Stub</option>
+			<option value="REF">References</option>
+			<option value="W2">W2</option>
+			</select></div><br>
+	<div> <input type="hidden" name="MAX_FILE_SIZE" value="10000000">	
+	<input type="file" name="prospectFileUploaded" id="prospectFile"></div>
+
+	<input type="submit" value="submitFile" name="submit"> 
+	</form>
+
+
+</body>
+</html>
