@@ -8,13 +8,18 @@
 
 
 <?php
+	//error reporting
 	ini_set('display_errors',1); 
  	error_reporting(E_ALL);
+ 	
+ 	//Session Initialization
  	@session_start();
+
+ 	//inlcude necessary files
 	include './SQL_Files/dbconnection.php';
 	include './calcPercentComplete.php';
-	include './editText.txt';
 	
+	//check if prospectID is from login or from Upload Successful page
 	if(isset($_POST['prospectID'])){
 		$prospectID = $_POST['prospectID'];
 		$_SESSION['prospectID_S'] = $prospectID;
@@ -23,11 +28,14 @@
 		$prospectID = $_SESSION['prospectID_S'];
 	}
 
+	//counter for uploaded docs
 	$uploadCount = 0;
 
+	//query for pull from prospect table
 	$query = "select g_id, firstname, lastname, ID_File_Loc, BankStatement1_File_Loc, BankStatement2_File_Loc, EmploymentLetter_File_Loc, PayStub_File_Loc, References_File_Loc, W2_File_Loc from prospect where p_id='".$prospectID."'"; 
 	$result = $dbcon->query($query);
 
+	//extract information from query results
 	$row = $result->fetch_assoc();
 	$firstname = $row['firstname'];
 	$lastname = $row['lastname'];
@@ -38,6 +46,7 @@
 	<p>The current status of your documentation upload is as follows: <br></p>
 
 <?php
+	//check status of uploaded files
 	if(is_null($row['ID_File_Loc'])){
 		$ID="Not Received";
 	}
@@ -140,27 +149,35 @@
 	<br>
 
 <?php
+	//initialize notes 
+	$file = './UserNotes/'.$prospectID.'_preferences.txt';
+	$header = $firstname." ".$lastname."'s Notes";
 
-$file = './edit.txt';
+	if(!file_exists($file)){
+		$handle = fopen($file, 'w');
+		fwrite($handle, $header);
+		fclose($handle);
+	}
 
-if ( isset( $_REQUEST['save'] ) && isset( $_REQUEST['editor'] ) ) {
-    // Save the new contents
+	if ( isset( $_REQUEST['save'] ) && isset( $_REQUEST['editor'] ) ) {
+	    // Save the new contents
 
-    $handle = fopen( $file, 'w' );
-    fwrite( $handle, $_REQUEST['editor'] );
-    fclose($handle);
+	    $handle = fopen( $file, 'w' );
+	    fwrite( $handle, $_REQUEST['editor'] );
 
-}
+	    fclose($handle);
 
-// Open the contents of the file
-$handle = fopen( $file, 'r' );
-$contents = fread( $handle, filesize($file) );
-fclose($handle);
+	}
+
+	// Open the contents of the file
+	$handle = fopen( $file, 'r' );
+	$contents = fread( $handle, filesize($file) );
+	fclose($handle);
 
 ?>
 	<form action="" method="post">
 	<input type="hidden" name="save" value="1" />
-	<textarea name="editor" id="editor">
+	<textarea cols="50" rows="7" name="editor" id="editor">
 		<?php echo ( $contents ); ?>
 	</textarea>
 	<input type="submit" value="Save" />
@@ -168,6 +185,7 @@ fclose($handle);
 
 	<p>You are currently 
 		<?php 
+			//calculate percent complete of upload 
 			$percentComplete = $uploadCount/7; 
 			$percentComplete = $percentComplete*100; 
 			$percent = number_format($percentComplete, 0);
@@ -177,6 +195,7 @@ fclose($handle);
 	<p>Your group is <?php echo calcPercentComplete("group",$groupID); ?>% complete.<br>  
 
 		<?php
+			//query for other prospects in group
 			$otherProspectQuery = "select * from prospect where g_id='".$groupID."' AND p_id!='".$prospectID."'";
 			$otherProspectResult = $dbcon->query($otherProspectQuery);
 			$numOtherProspects = $otherProspectResult->num_rows;
@@ -185,6 +204,7 @@ fclose($handle);
 
 			}
 			else{
+				//output completion percentage 
 				for($i=0;$i<$numOtherProspects;$i++){
 					$otherProspectRow = $otherProspectResult->fetch_assoc();
 					echo "~".$otherProspectRow['firstname']." ".$otherProspectRow['lastname']." is ".
