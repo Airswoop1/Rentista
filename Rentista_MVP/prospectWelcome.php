@@ -178,7 +178,7 @@
 	<form action="" method="post">
 	<input type="hidden" name="save" value="1" />
 	<textarea cols="50" rows="7" name="editor" id="editor">
-		<?php echo ( $contents ); ?>
+		<?php echo $contents; ?>
 	</textarea>
 	<input type="submit" value="Save" />
 	</form>

@@ -1,5 +1,14 @@
 <?php
+/*
+function calcPercentComplete
 
+Args: 
+$type=either "single" or "group" to signify whether we want the whole groups % complete 
+or a single prospects
+$id= p_id or g_id that we want the % complete for
+
+returns the value as a whole percentage number (i.e. 47)
+*/
 
 function calcPercentComplete($type, $id){
 include './SQL_Files/dbconnection.php';

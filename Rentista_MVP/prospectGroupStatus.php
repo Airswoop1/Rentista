@@ -16,19 +16,21 @@
 	include './SQL_Files/dbconnection.php';
 	include './calcPercentComplete.php';
 
+	//take the group ID sent from the previous page
 	$groupID = $_GET['groupID'];
-
+	
+	//query to pull information about the entire prospect group
 	$query = "select * from prospect where g_id='".$groupID."'";
-
 	$result = $dbcon->query($query);
 	$numProspects = $result->num_rows;
 
+	//check to make sure that the query returned results
 	if($numProspects<1){
 		echo "Invalid group ID!";
 		exit;
 	}
 	else{
-
+		//echo the groups % complete
 		echo "<p>Group ".$groupID." is ".calcPercentComplete("group",$groupID)."% complete.</p>";
 
 ?>
@@ -45,12 +47,14 @@
 		<th>References</th>
 		<th>W2</th>
 		<th>Action</th>
+		<th>Comments</th>
 	</tr>
 <?php
-
+//loop through the results of the query and generate table of each prospects information
 for($i=0;$i<$numProspects; $i++){
 	$row = $result->fetch_assoc();
 
+	//checks the results of the query and determines which documents have been received or not received
 	if(is_null($row['ID_File_Loc'])){
 		$ID="Not Received";
 	}
@@ -100,20 +104,30 @@ for($i=0;$i<$numProspects; $i++){
 		$W2="Received";
 	}
 
+	//grab the notes that a user has saved
+	$prefFile = './UserNotes/'.$row['p_id'].'_preferences.txt';
+	$handle = fopen( $prefFile, 'r' );
+	$contents = fread( $handle, filesize($prefFile) );
+	fclose($handle);
+
+	//print the other information about the prospect group
 	echo "<tr><td>".$row['firstname']." ".$row['lastname']."</td>
 	<td align=\"center\">".calcPercentComplete("single",$row['p_id'])."%</td>
 	<td>".$ID."</td><td>".$BS1."</td><td>".$BS2."</td><td>".$EL."</td><td>".$PS."</td><td>".$REF."</td>
 	<td>".$W2."</td><td>";
 
+	//calculate the prospects % complete and if not complete allow the broker to 
+	//nudge otherwise let them download the entire file package
 	if(calcPercentComplete("single",$row['p_id'])<100){
 		echo "<a href=\"mailTemplate.php\">Nudge!</a>";
 
 	}
 	else{
-		echo "Complete";
+		echo "<a href=\"downloadZip.php\">Download ZIP</a>";
 	}
-
-	echo "</td><tr>";
+	
+	//print the notes
+	echo "</td><td>$contents</td><tr>";
 }
 }
 ?>
