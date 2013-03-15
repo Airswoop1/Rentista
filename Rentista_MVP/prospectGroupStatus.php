@@ -54,6 +54,8 @@
 for($i=0;$i<$numProspects; $i++){
 	$row = $result->fetch_assoc();
 
+	$prospectID = $row['p_id'];
+
 	//checks the results of the query and determines which documents have been received or not received
 	if(is_null($row['ID_File_Loc'])){
 		$ID="Not Received";
@@ -106,10 +108,14 @@ for($i=0;$i<$numProspects; $i++){
 
 	//grab the notes that a user has saved
 	$prefFile = './UserNotes/'.$row['p_id'].'_preferences.txt';
+	if(file_exists($prefFile)){
 	$handle = fopen( $prefFile, 'r' );
 	$contents = fread( $handle, filesize($prefFile) );
 	fclose($handle);
-
+	}
+	else{
+		$contents = "";
+	}
 	//print the other information about the prospect group
 	echo "<tr><td>".$row['firstname']." ".$row['lastname']."</td>
 	<td align=\"center\">".calcPercentComplete("single",$row['p_id'])."%</td>
@@ -119,7 +125,7 @@ for($i=0;$i<$numProspects; $i++){
 	//calculate the prospects % complete and if not complete allow the broker to 
 	//nudge otherwise let them download the entire file package
 	if(calcPercentComplete("single",$row['p_id'])<100){
-		echo "<a href=\"mailTemplate.php\">Nudge!</a>";
+		echo "<a href=\"nudgeProspect.php?prospectID=$prospectID&groupID=$groupID\">Nudge!</a>";
 
 	}
 	else{

@@ -71,15 +71,48 @@
 
 </table>
 <br>
-<table>
-	<thead><strong>Onboard A New Prospective Tenant</strong></thead>
+<form action="onBoardPG.php" method="POST">
+<table border="3">
+	<thead><h4>Onboard A New Prospective Tenant</h4></thead>
 	<tr>
+		<th>#</th>
 		<th>First Name</th>
 		<th>Last Name</th>
 		<th>Email</th>
 		<th>Phone #</th>
 	</tr>
+	<tr>
+		<td>1</td>
+		<td><input type="text" Name="firstName1" /></td>
+		<td><input type="text" Name="lastName1" /></td>
+		<td><input type="text" Name="email1" /></td>
+		<td><input type="text" Name="phone1" /></td>
+	</tr>
+		<tr>
+		<td>2</td>
+		<td><input type="text" Name="firstName2" /></td>
+		<td><input type="text" Name="lastName2" /></td>
+		<td><input type="text" Name="email2" /></td>
+		<td><input type="text" Name="phone2" /></td>
+	</tr>
+		<tr>
+		<td>3</td>
+		<td><input type="text" Name="firstName3" /></td>
+		<td><input type="text" Name="lastName3" /></td>
+		<td><input type="text" Name="email3" /></td>
+		<td><input type="text" Name="phone3" /></td>
+	</tr>
+		<tr>
+		<td>4</td>
+		<td><input type="text" Name="firstName4" /></td>
+		<td><input type="text" Name="lastName4" /></td>
+		<td><input type="text" Name="email4" /></td>
+		<td><input type="text" Name="phone4" /></td>
+	</tr>
 </table>
+		<td colspan="2"><input type="submit"><td>
+		<td colspan="2"><input type="button" value="Add Additional Prospects"></td>
 
+</form>
 </body>
 </html>

@@ -18,6 +18,7 @@
  	//inlcude necessary files
 	include './SQL_Files/dbconnection.php';
 	include './calcPercentComplete.php';
+	include './sendEmail.php';
 	
 	//check if prospectID is from login or from Upload Successful page
 	if(isset($_POST['prospectID'])){
