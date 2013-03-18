@@ -18,14 +18,16 @@
 
 	}
 
+	$fileExt = substr(strrchr($fileUploadedName,'.'),1);
+
 	//name the file based on the type and prospect ID and generate path
-	$upFile = 'UploadedFiles/'.$prospectID."_".$uploadClass."_File";
+	$upFile = 'UploadedFiles/'.$prospectID."_".$uploadClass."_File.".$fileExt;
 
 	//check that the file came from the previous pages' POST
 	if(is_uploaded_file($_FILES['prospectFileUploaded']['tmp_name'])){
 		//move the file into the location identified by $upFile
 		if(!move_uploaded_file($_FILES['prospectFileUploaded']['tmp_name'], $upFile)){
-			echo 'Probelm: Could not move file to dest directory.';
+			echo 'Problem: Could not move file to dest directory.';
 			exit;
 		}
 

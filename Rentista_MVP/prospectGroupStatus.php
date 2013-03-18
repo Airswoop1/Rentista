@@ -129,7 +129,7 @@ for($i=0;$i<$numProspects; $i++){
 
 	}
 	else{
-		echo "<a href=\"downloadZip.php\">Download ZIP</a>";
+		echo "<a href=\"downloadZip.php?prospectID=$prospectID&groupID=$groupID\">Download ZIP</a>";
 	}
 	
 	//print the notes
