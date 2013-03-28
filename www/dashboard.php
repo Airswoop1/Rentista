@@ -113,12 +113,45 @@
 						    <h3 id="myModalLabel">Broker Exclusivity Agreement</h3>
 					    </div>
 				    	<div class="modal-body">
-				    		<p>On all NO FEE marked apartments, you must negotiate through Peter*Ashe ONLY, failing to negotiate through Peter*Ashe and obtain the apartment through other sources will obligate you, the tenant, to pay Peter*Ashe the commission and expenses of collecting such fee, including attorney’s fee, according to this agreement. On all rental buildings, this agreement shall apply to all future availability of any apartments.</p>
-								<p>You understand that remittance for such commission shall be due in full upon signing the lease agreement for an apartment or property shown to you by Peter*Ashe, made payable via certified check to Peter*Ashe. The brokerage commission shall be refunded to you in the event that a lease agreement is not executed or you fail to qualify.</p>
-								<p>In the event that you purchase a property initially shown to you by Peter*Ashe for rental purposes, Peter*Ashe will be recognized as the broker of record and you agree to remit payment for brokerage commission in the amount equivalent to six (6%) percent of the total purchase price, less any rental commission if already paid, at closing.</p>
-								<p>Peter*Ashe will use its best efforts to represent your interests in the procurement of an apartment/property. You understand that in the event that you rent or buy an apartment or property shown to you by Peter*Ashe through the service of a broker other than Peter*Ashe or through the seller/owner directly, you will still be responsible for paying the entire commission due to Peter*Ashe. You understand that Peter*Ashe is not responsible for the repair, maintenance of the property, or any other aspect of the management. You hereby acknowledge that Peter*Ashe has disclosed to you that it may collect a real estate brokerage commission from both the Buyer/Tenant, through its agent, and the Seller/Landlord in connection with the sale/rent of the referenced properties; and that it may represent both Buyer/Tenant and Seller/Landlord for certain properties. We represent the Purchaser/ Tenant with respect to the exclusive listings of another brokerage firm. We represent the Seller/Landlord on our firm’s exclusive listings and all open listings.</p>
-								<p>Any claim that you may have arising from the services provided to you by Peter*Ashe shall be limited to the amount of the brokerage commission. You shall be responsible for all and any fees, including but not limited to attorney’s fees with regards to collecting and or enforcing this agreement. Any disputes arising from this agreement shall be subject to settlement solely by binding arbitration under the rules and jurisdiction of the Real Estate Board of New York, Inc.</p>
-								<p>By signing below, you understand that you have authorized Peter*Ashe to act as your agent for the procurement of a rental/purchase apartment/property. This agreement can change only by the Peter*Ashe manager in writing.</p>
+				    		<p>On all NO FEE marked apartments, you must negotiate through Peter*Ashe 
+				    			ONLY, failing to negotiate through Peter*Ashe and obtain the apartment 
+				    			through other sources will obligate you, the tenant, to pay Peter*Ashe the 
+				    			commission and expenses of collecting such fee, including attorney’s fee, 
+				    			according to this agreement. On all rental buildings, this agreement shall 
+				    			apply to all future availability of any apartments.</p>
+								<p>You understand that remittance for such commission shall be due in full 
+									upon signing the lease agreement for an apartment or property shown to 
+									you by Peter*Ashe, made payable via certified check to Peter*Ashe. The 
+									brokerage commission shall be refunded to you in the event that a lease 
+									agreement is not executed or you fail to qualify.</p>
+								<p>In the event that you purchase a property initially shown to you by Peter*
+									Ashe for rental purposes, Peter*Ashe will be recognized as the broker of 
+									record and you agree to remit payment for brokerage commission in the amount 
+									equivalent to six (6%) percent of the total purchase price, less any rental 
+									commission if already paid, at closing.</p>
+								<p>Peter*Ashe will use its best efforts to represent your interests in the
+								 procurement of an apartment/property. You understand that in the event that 
+								 you rent or buy an apartment or property shown to you by Peter*Ashe through 
+								 the service of a broker other than Peter*Ashe or through the seller/owner directly,
+								  you will still be responsible for paying the entire commission due to Peter*Ashe.
+								   You understand that Peter*Ashe is not responsible for the repair, maintenance of 
+								   the property, or any other aspect of the management. You hereby acknowledge that 
+								   Peter*Ashe has disclosed to you that it may collect a real estate brokerage 
+								   commission from both the Buyer/Tenant, through its agent, and the Seller/Landlord 
+								   in connection with the sale/rent of the referenced properties; and that it may 
+								   represent both Buyer/Tenant and Seller/Landlord for certain properties. We r
+								   epresent the Purchaser/ Tenant with respect to the exclusive listings of another 
+								   brokerage firm. We represent the Seller/Landlord on our firm’s exclusive listings 
+								   and all open listings.</p>
+								<p>Any claim that you may have arising from the services provided to you by Peter*Ashe 
+									shall be limited to the amount of the brokerage commission. You shall be responsible
+									 for all and any fees, including but not limited to attorney’s fees with regards to 
+									 collecting and or enforcing this agreement. Any disputes arising from this agreement
+									  shall be subject to settlement solely by binding arbitration under the rules and 
+									  jurisdiction of the Real Estate Board of New York, Inc.</p>
+								<p>By signing below, you understand that you have authorized Peter*Ashe to act as your
+								 agent for the procurement of a rental/purchase apartment/property. This agreement can
+								  change only by the Peter*Ashe manager in writing.</p>
 				    	</div>
 				    	<div class="modal-footer">
 				    		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>

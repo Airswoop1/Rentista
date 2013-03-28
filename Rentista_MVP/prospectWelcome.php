@@ -33,7 +33,7 @@
 	$uploadCount = 0;
 
 	//query for pull from prospect table
-	$query = "select g_id, firstname, lastname, ID_File_Loc, BankStatement1_File_Loc, BankStatement2_File_Loc, EmploymentLetter_File_Loc, PayStub_File_Loc, References_File_Loc, W2_File_Loc from prospect where p_id='".$prospectID."'"; 
+	$query = "select g_id, firstname, lastname, ID_File_Loc, BankStatement1_File_Loc, BankStatement2_File_Loc, EmploymentLetter_File_Loc, PayStub_File_Loc, References_File_Loc, W2_File_Loc, Registration_Flag from prospect where p_id='".$prospectID."'"; 
 	$result = $dbcon->query($query);
 
 	//extract information from query results
@@ -43,7 +43,19 @@
 	$groupID = $row['g_id'];
 	$numrows = mysqli_num_rows($result);
 ?>
-	<p>Welcome <?php echo $firstname; echo " "; echo $lastname; ?> </p>
+	<h3>Welcome <?php echo $firstname; echo " "; echo $lastname; ?> </h3>
+	<h4>Registration Agreement</h4>
+<?php
+	if($row['Registration_Flag']==null){
+		echo "<a href=\"registrationAgreement.php\">Click here to view and sign your Registration Agreement</a>";
+
+	}
+	elseif($row['Registration_Flag']=='Yes'){
+		echo "You have successfully completed your registration agreement.";
+	}
+
+?>
+	<h4>Documentation Upload</h4>
 	<p>The current status of your documentation upload is as follows: <br></p>
 
 <?php

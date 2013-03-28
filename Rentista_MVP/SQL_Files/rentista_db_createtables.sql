@@ -13,7 +13,7 @@ create table prospect
 		PayStub_File_Loc varchar(30),
 		References_File_Loc varchar(30),
 		W2_File_Loc varchar(30),
-		Additional_File_Loc varchar(30)
+		Registration_Flag varchar(3)
 	);
 
 create table broker

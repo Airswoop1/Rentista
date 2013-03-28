@@ -1,6 +1,6 @@
 use RentistaMVP;
 
-insert into prospect (g_id, firstname, lastname, email, phone, ID_File_Loc, BankStatement1_File_Loc, BankStatement2_File_Loc, EmploymentLetter_File_Loc, PayStub_File_Loc, References_File_Loc, W2_File_Loc, Additional_File_Loc) values
+insert into prospect (g_id, firstname, lastname, email, phone, ID_File_Loc, BankStatement1_File_Loc, BankStatement2_File_Loc, EmploymentLetter_File_Loc, PayStub_File_Loc, References_File_Loc, W2_File_Loc, Registration_Flag) values
 	(1, 'Brian', 'Casey', 'bbc211@gmail.com', '215-321-4321', null, null, null, null, null, null, null, null),
 	(1, 'Matt', 'Cramer', 'matt.cramer@gmail.com', '345-234-2123', null, null, null, null, null, null, null, null),
 	(2, 'Kunal', 'Mehta', 'kmehta@gmail.com', '231-231-4321', null, null, null, null, null, null, null, null),

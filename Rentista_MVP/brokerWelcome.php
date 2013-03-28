@@ -49,9 +49,7 @@
 	}
 	else{
 ?>
-<!-- Potentially want to make this table editable so broker can edit specifics about property?-->
-<form action="" method="post">
-	<input type="hidden" name="save" value="1" />
+
 	<table border="1" bordercolor="#FFCC00" style="background-color:#FFFFCC" 
 	width="500" cellpadding="3" cellspacing="5">
 	<tr>
@@ -73,9 +71,7 @@
 ?>
 
 </table>
-<input type="submit" value="Save" />
 
-</form>
 
 <form action="onBoardPG.php" method="POST">
 <table border="3">
