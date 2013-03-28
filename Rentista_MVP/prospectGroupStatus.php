@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <html>
 <head>
 	<title>Broker Dashboard: Prospect Group Detail</title>
@@ -12,13 +15,12 @@
 <?php
 	ini_set('display_errors',1); 
  	error_reporting(E_ALL);
- 	@session_start();
 	include './SQL_Files/dbconnection.php';
 	include './calcPercentComplete.php';
 
 	//take the group ID sent from the previous page
 	$groupID = $_GET['groupID'];
-	
+
 	//query to pull information about the entire prospect group
 	$query = "select * from prospect where g_id='".$groupID."'";
 	$result = $dbcon->query($query);
