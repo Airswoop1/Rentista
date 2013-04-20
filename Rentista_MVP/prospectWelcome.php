@@ -1,3 +1,5 @@
+<?php session_start();?>
+<!--
 <html>
 <head>
 	<title>Prospect Upload</title>
@@ -5,15 +7,12 @@
 <body>
 	<p>Welcome to the Rentista Prospect Upload page!</p>
 	<div><strong><a href="logoff.html">Log Off</a></strong></div>
-
+//-->
 
 <?php
 	//error reporting
 	ini_set('display_errors',1); 
  	error_reporting(E_ALL);
- 	
- 	//Session Initialization
- 	@session_start();
 
  	//inlcude necessary files
 	include './SQL_Files/dbconnection.php';
@@ -42,22 +41,35 @@
 	$lastname = $row['lastname'];
 	$groupID = $row['g_id'];
 	$numrows = mysqli_num_rows($result);
+	$registrationFlag = $row['Registration_Flag'];
 ?>
+<!--
 	<h3>Welcome <?php echo $firstname; echo " "; echo $lastname; ?> </h3>
 	<h4>Registration Agreement</h4>
+//-->
 <?php
-	if($row['Registration_Flag']==null){
-		echo "<a href=\"registrationAgreement.php\">Click here to view and sign your Registration Agreement</a>";
+	if(($row['Registration_Flag']==null) AND (!isset($_POST['registrationCheckBox']))){
+		
+		//echo "<a href=\"registrationAgreement.php\">Click here to view and sign your Registration Agreement</a>";
+	}
+	elseif(($row['Registration_Flag']==null) AND (isset($_POST['registrationCheckBox']))){
+		if($_POST['registrationCheckBox']=='agree'){
+			$updateQuery = "UPDATE prospect SET Registration_Flag='Yes' WHERE p_id=$prospectID";
+			$dbcon->query($updateQuery);
+		}
+		//echo "You have successfully completed your registration agreement.";
 
 	}
 	elseif($row['Registration_Flag']=='Yes'){
-		echo "You have successfully completed your registration agreement.";
+		//echo "You have successfully completed your registration agreement.";
 	}
 
 ?>
+
+<!--
 	<h4>Documentation Upload</h4>
 	<p>The current status of your documentation upload is as follows: <br></p>
-
+//-->
 <?php
 	//check status of uploaded files
 	if(is_null($row['ID_File_Loc'])){
@@ -116,6 +128,7 @@
 		$uploadCount++;
 	}
 ?>
+<!---
 	<table border="1">
 		<tr>
 			<th>Document</th>
@@ -160,6 +173,7 @@
 	
 	</table>
 	<br>
+	//---->
 
 <?php
 	//initialize notes 
@@ -188,6 +202,8 @@
 	fclose($handle);
 
 ?>
+
+<!--
 	<form action="" method="post">
 	<input type="hidden" name="save" value="1" />
 	<textarea cols="50" rows="7" name="editor" id="editor">
@@ -197,16 +213,17 @@
 	</form>
 
 	<p>You are currently 
+//-->
 		<?php 
 			//calculate percent complete of upload 
 			$percentComplete = $uploadCount/7; 
 			$percentComplete = $percentComplete*100; 
 			$percent = number_format($percentComplete, 0);
-			echo $percent;
-			?>% complete! </p>
+	//		echo $percent;
+			?><!--% complete! </p> //-->
 
-	<p>Your group is <?php echo calcPercentComplete("group",$groupID); ?>% complete.<br>  
-
+<!--	<p>Your group is <?php echo calcPercentComplete("group",$groupID); ?>% complete.<br>  
+//-->
 		<?php
 			//query for other prospects in group
 			$otherProspectQuery = "select * from prospect where g_id='".$groupID."' AND p_id!='".$prospectID."'";
@@ -218,14 +235,21 @@
 			}
 			else{
 				//output completion percentage 
+				$otherProspectFirstName = array();
+				$otherProspectLastName = array();
+				$otherProspectPerComp = array();
 				for($i=0;$i<$numOtherProspects;$i++){
 					$otherProspectRow = $otherProspectResult->fetch_assoc();
-					echo "~".$otherProspectRow['firstname']." ".$otherProspectRow['lastname']." is ".
+					$otherProspectFirstName[$i] = $otherProspectRow['firstname'];
+					$otherProspectLastName[$i] = $otherProspectRow['lastname'];
+					$otherProspectPerComp[$i] = calcPercentComplete("single",$otherProspectRow['p_id']);
+					/**echo "~".$otherProspectRow['firstname']." ".$otherProspectRow['lastname']." is ".
 					calcPercentComplete("single",$otherProspectRow['p_id'])."% complete.<br>";	
+				**/
 				}
 			}
 		?>
-	</p>
+<!--	</p>
 
 	<p>Upload a Document: </p>
 	<form name="docUpload" action="prospectUpload.php" method="POST" enctype="multipart/form-data" >
@@ -246,4 +270,4 @@
 
 
 </body>
-</html>
+</html> //-->

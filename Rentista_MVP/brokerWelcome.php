@@ -6,7 +6,7 @@
 	<title>Broker Dashboard</title>
 </head>
 <body>
-	<p>Welcome to the Rentista Broker Dashboard page!</p>
+	<h3>Welcome to the Rentista Broker Dashboard page!</h3>
 	<div><strong><a href="logoff.html">Log Off</a></strong></div>
 
 <?php
@@ -19,7 +19,6 @@
 	if(isset($_POST['brokerID'])){
 		$brokerID = $_POST['brokerID'];
 		$_SESSION['brokerID'] = $brokerID;
-		echo "Set Session variable";
 	}
 	else{
 		$brokerID = $_SESSION['brokerID'];

@@ -34,7 +34,7 @@
 		$REF = $row['References_File_Loc'];
 		$W2 = $row['W2_File_Loc'];
 
-		$fileArray = array("$ID","$BS1","BS2","$EMP","$PS","$REF","$W2");
+		$fileArray = array("$ID","$BS1","$BS2","$EMP","$PS","$REF","$W2");
 
 		$zippedFileLoc = "./ZippedFiles/".$prospectID."_zipped.zip";
 
@@ -45,6 +45,7 @@
 					</p><p>Zip File not created succesfully</p>";
 
 	?>
+
 
 </body>
 </html>

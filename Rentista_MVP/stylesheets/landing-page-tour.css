@@ -1,0 +1,64 @@
+html {
+  background-color: #35353a;
+}
+body {
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+}
+/* This makes absolutely positioned elements like p, h1,
+     and some bootstrap elements placed properly. */
+ #absolute-wrapper p, #absolute-wrapper h1, #absolute-wrapper h2, #absolute-wrapper h3, #absolute-wrapper h4, #absolute-wrapper h5, #absolute-wrapper h6 {
+  margin-top: 0 !important;
+}
+#absolute-wrapper {
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+  height: 1px;
+}
+#absolute-wrapper .navbar {
+  height: 68px;
+  width: 980px;
+  position: absolute;
+  top: 0px;
+  left: 60px;
+}
+#absolute-wrapper .navbar .navbar-inner {
+  background: #35353a;
+  border-radius: 0px;
+  border: none;
+  height: 68px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#absolute-wrapper .navbar .brand {
+  font-size: 30px;
+  color: #bbd0fb;
+  font-family:"helvetica";
+  font-weight: normal;
+  padding: 20px;
+}
+#absolute-wrapper .navbar .nav li a {
+  color: #bbd0fb;
+  padding: 20px 15px 20px 15px;
+}
+#absolute-wrapper .image {
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.container .row-fluid.row-fluid-1 {
+  margin: 75px 0px 0px 0px;
+}
+.container .row-fluid-1 .span6 .heading {
+  color: #ffb900;
+}
+.container .row-fluid-1 .span6 .heading.heading-1 {
+  padding: 0px 0px 10px 0px;
+}
+.container .row-fluid .span6 .heading.heading-2 {
+  color: #ffb900;
+}

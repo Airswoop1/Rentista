@@ -130,8 +130,13 @@ for($i=0;$i<$numProspects; $i++){
 		echo "<a href=\"nudgeProspect.php?prospectID=$prospectID&groupID=$groupID\">Nudge!</a>";
 
 	}
-	else{
-		echo "<a href=\"downloadZip.php?prospectID=$prospectID&groupID=$groupID\">Download ZIP</a>";
+	elseif(!file_exists("./ZippedFiles/".$row['p_id']."_zipped.zip"))
+	{
+		echo "<a href=\"downloadZip.php?prospectID=$prospectID&groupID=$groupID\">Create Zip</a>";
+	}
+	else
+	{
+		echo "<a href=\"./ZippedFiles/".$row['p_id']."_zipped.zip\">Download Zip</a>";
 	}
 	
 	//print the notes

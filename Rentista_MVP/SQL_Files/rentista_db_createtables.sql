@@ -1,3 +1,10 @@
+drop table prospect;
+drop table broker;
+drop table brokerages;
+drop table broker_brokerages;
+drop table transaction;
+drop table approvals;
+
 create table prospect
 	(
 		p_id int unsigned not null auto_increment primary key,
@@ -47,4 +54,17 @@ create table transaction
 		unit varchar(15),
 		city varchar(20),
 		application_file_loc varchar(30) 
+		);
+
+create table approvals
+	(
+		p_id int unsigned not null,
+		b_id int unsigned not null,
+		ID tinyint unsigned,
+		BS1 tinyint unsigned,
+		BS2 tinyint unsigned,
+		EMP tinyint unsigned,
+		PS tinyint unsigned,
+		Ref tinyint unsigned,
+		W2 tinyint unsigned
 		);

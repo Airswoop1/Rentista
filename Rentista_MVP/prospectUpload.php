@@ -58,6 +58,6 @@
 </head>
 <body>
 	<p><strong>File <?php echo $fileUploadedName; ?> Uploaded Successfully for the <?php echo $uploadClass; ?> requirement</strong></p><br>
-	<a href="prospectWelcome.php">Navigate back to upload page</a>
+	<a href="dashboard.php">Navigate back to upload page</a>
 </body>
 </html>
