@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <header class="row">
+        <div class="span12">
+
+          <nav class="navbar">
+            <div class="navbar-inner">
+              <a href="#" class="brand">rentista nyc</a>
+
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+              </a>
+
+              <div class="nav-collapse collapse">
+
+              <ul class="nav">
+                <li class="divider-vertical"></li>
+                <li><a href="#">home</a> </li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">blog</a> </li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">about</a> </li>
+                <li class="divider-vertical"></li>
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="prospect.html">Broker</a> </li>
+                    <li><a href="">Tenant</a> </li>
+                  </ul>
+                </li>
+                <li class="divider-vertical"></li>
+              </ul>
+              </div>
+            </div>
+          </nav> <!---- NavBar ---->
+
+        </div>
+
+      </header> <!---End of Header---->
+
+      <div class="row" id="main-content">
+
+        <div class="span4" id="sidebar">
+
+          <div class="well">
+
+            <form>
+              <fieldset>
+                <legend>Login</legend>
+                <input type="text" class="input-block-level" placeholder="username">
+                <input type="text" class="input-block-level" placeholder="password">
+                <label class="checkbox">
+                  <input type="checkbox">Remember Me
+                </label>
+
+                <div class="pull-right">
+                  <input type="submit" class="btn btn-primary" value="login">
+                  <a class="btn btn-info" href="#register" role="button" data-toggle="modal">register</a>
+                </div>
+              </fieldset>
+
+            </form>
+
+          </div>
+
+        </div>
+        <div class="span8"></div>
+
+      </div><!---End of Container---->
+
+      <div id="register" class="modal hide fade" aria-labelledby="modalLabel" aria-hidden ="true">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></button>
+           <h3 id="modalLabel">Register</h3>
+        </div>
+
+        <div class="modal-body">
+
+          <form>
+            <div class="controls controls-row">
+              <input type="text" class="span2" placeholder="firstname">
+              <input type="text" class="span2" placeholder="lastname">
+
+              <select class="span1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+
+            </div>
+
+            <div class="controls control-group">
+              <input type="text" class="span5" placeholder="username">
+              <input type="text" class="span5" placeholder="email">
+              <input type="text" class="span5" placeholder="confirm email">
+            </div>
+
+            <p class="help-block">I know:  
+
+              <a href="#" id="tip" rel="tooltip" data-animation="true" data-original-title="Cool tip"
+              data-placement="right"></a>
+
+
+            </p>
+
+             <label class="checkbox inline">
+                  <input type="checkbox">HTML CSS
+                </label>
+              <label class="checkbox inline">
+                  <input type="checkbox">Javascript
+                </label>
+                <label class="checkbox inline">
+                  <input type="checkbox">PHP
+                </label>
+          </form> 
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">cancel</button>
+          <button class="btn btn-success">Register</button>
+        </div>
+
+      </div>
+
+
+      <div class="row" id="main-content"></div>
+      <footer class="row"></footer>
+
+
+
+
+    </div>
+
+
+
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $("#tip").tooltip();
+
+    </script>
+  </body>
+</html>

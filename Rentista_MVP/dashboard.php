@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 
 <?php
+session_start();
 include './prospectWelcome.php';
-
+$_SESSION['prospectID_S'] = $prospectID;
+error_log($_SESSION['prospectID_S']);
 ?>	
 <html lang="en">
 <head>
@@ -16,6 +18,35 @@ include './prospectWelcome.php';
 	<script src="http://html5shiv.gogglecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+function rentalAgreement(value){
+	$.post(
+		'updateFunction.php',
+		{prospectID:"<?php echo $prospectID;?>"},
+		function(){
+	
+		if(value=='true'){
+		$('#myModal').modal('hide');
+		var brokerAgreementBox = document.getElementById('brokerAgreementModalButton');
+		brokerAgreementBox.style.visibility = 'hidden';
+		var brokerAgreeHeader = document.getElementById('brokerAgreementHeader');
+		brokerAgreeHeader.style.visibility = 'hidden';
+
+		document.getElementById('noRegFlagMove').appendChild(
+			document.getElementById('uploadHeader')
+			);
+		document.getElementById('noRegFlagMove').appendChild(
+			document.getElementById('uploadBox')
+			);
+
+		var brokerAgTag = document.getElementById('brokerAgreementTag');
+		brokerAgTag.style.color = "green";
+		brokerAgTag.class = "icon-ok-sign";
+	}
+	});
+};
+
+</script>
 </head>
 <body data-spy="scroll" data-target=".nav_contain">
 
@@ -58,7 +89,7 @@ include './prospectWelcome.php';
 		<div class="navbar second">
 			<div class="cntr_contain">
 				<!-- Prospect -->
-				<div class="span6 prospect">
+				<div class="span6 	prospect">
 					<div class="row">
 						<div class="span2">
 							<a href="#TODO" class="thumbnail">
@@ -80,17 +111,30 @@ include './prospectWelcome.php';
 
 			<div id="col1" class="row">
 				<div id="col1_nav" class="span3">
-					<div data-spy="affix" data-offset-top="162" class="nav_contain"> <!-- Contain col for affix -->
-						<!--<i class="icon-th-list"></i>--><h4>Checklist</h4>
-						<ul class="nav nav-tabs nav-stacked">
-	    				<li><a href="#broker" 
-	    					<?php if($registrationFlag!=null){
+					<div data-offset-top="162" class="nav_container">
+					<h4>Agreement</h4>
+						<li class="nav">
+		    				<a id="brokerAgreementTag" href="#broker" 
+		    					<?php if($registrationFlag!=null){
+		    						echo "style=\"color:green; \"><i  class=\"icon-ok-sign\" ";
+		    					}
+		    					else{
+		    						echo "style=\"color:red\"><i class=\"icon-remove-sign\"";
+		    					}
+		    				?>></i>  Broker Agreement</a> 
+						</li>
+					 <!-- Contain col for affix -->
+						<!--<i class="icon-th-list"></i>--><h4 style="margin-top:-20px">Required Documents</h4>
+	    				
+	    				<ul class="nav nav-pills nav-stacked">
+ 	    				<li><a href="#photo_id" 
+	    					<?php if($ID=="Received"){
 	    						echo "style=\"color:green\"><i  class=\"icon-ok-sign\" ";
 	    					}
 	    					else{
 	    						echo "style=\"color:red\"><i class=\"icon-remove-sign\"";
 	    					}
-	    				?>></i>Broker Agreement</a></li>
+	    				?>></i>Identification</a></li>
 	    				<li><a href="#employ_letter" 
 	    					<?php if($EL=="Received"){
 	    						echo "style=\"color:green\"><i  class=\"icon-ok-sign\" ";
@@ -121,49 +165,49 @@ include './prospectWelcome.php';
 	    						echo "style=\"color:red\"><i class=\"icon-remove-sign\"";
 	    					}
 	    				?>	 >></i>References</a></li>
-	    				<li><a href="#bank_statement" <?php if($BS1=="Received"){
+	    				<li><a href="#bank_statement1" <?php if($BS1=="Received"){
 	    						echo "style=\"color:green\"><i  class=\"icon-ok-sign\" ";
 	    					}
 	    					else{
 	    						echo "style=\"color:red\"><i class=\"icon-remove-sign\"";
 	    					}
-	    				?>></i>Bank Statement</a></li>
-	    				<li><a href="#photo_id" 
-	    					<?php if($ID=="Received"){
+	    				?>></i>Bank Statement 1</a></li>
+	    				<li><a href="#bank_statement1" <?php if($BS2=="Received"){
 	    						echo "style=\"color:green\"><i  class=\"icon-ok-sign\" ";
 	    					}
 	    					else{
 	    						echo "style=\"color:red\"><i class=\"icon-remove-sign\"";
 	    					}
-	    				?>></i>Identification</a></li>
-    				</ul>
-    				<ul class="nav nav-tabs nav-stacked" id="personal_progress">
+	    				?>></i>Bank Statement 2</a></li>
+    				</ul>	
+    				<ul class="nav nav-tabs nav-stacked" style="height:10px;margin-top:-20px" id="personal_progress">
     					<li><a href="">
     						<?php
     						echo "You are ".$percent."% complete!"
     						?>
     					</a></li>
     				</ul>
-    				<h4>Roommate Progress</h4>
+    				<h4 style="margin-top:-60px">Roommate Progress</h4>
     				<ul class="nav nav-tabs nav-stacked" id="roommate_progress">
     					<?php
     					for($i=0;$i<$numOtherProspects;$i++){
-    						echo "<li><img src=\"./assets/genericUser.jpg\"><a href=\"\" >$otherProspectFirstName[$i] has $otherProspectPerComp[$i]% complete</a></li>";
+    						echo "<li><img src=\"./assets/genericUser.jpg\"><a style=\"font-size:12px\" href=\"\" >$otherProspectFirstName[$i] is $otherProspectPerComp[$i]% complete</a></li>";
     				}
     				?>
     				</ul>
-    				<div class="span12" style="bottom-padding=12px"></div>
+
     			</div>
 				</div>
 				<div class="span9" id="main">
+					<div id="noRegFlagMove"></div>
 				<?php if($registrationFlag==null){
 					?>
 				
-					<h4>Broker Agreement</h4>
-					<div id="broker" class="hero-unit">
+					<h4 id="brokerAgreementHeader">Broker Agreement</h4>
+					<div id="brokerAgreementModalButton" class="hero-unit">
 						<a href="#" class="task_badge"></a>
 						<!-- Button to trigger modal -->
-  					<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+  					<a href="#myModal" role="button" class="btn" data-toggle="modal">View Registration Agreement</a>
 
 				    <!-- Modal -->
 				    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -178,8 +222,8 @@ include './prospectWelcome.php';
 							landlord gives its approval for said residences</p>
 				    	</div>
 				    	<div class="modal-footer">
-				    		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-				    		<button class="btn btn-primary">I Agree</button>
+				    		<button class="btn" data-dismiss="modal" aria-hidden="true">I do not agree</button>
+				    		<button id="modal-agree-btn" class="btn btn-primary" onclick="rentalAgreement('true')">I Agree</button>
 				    	</div>
 				    </div>		
 					</div>
@@ -188,11 +232,9 @@ include './prospectWelcome.php';
 
 
 					?>
-					<h4>Upload Documents</h4>
-
-
+					<h4 id="uploadHeader">Upload Documents</h4>
 					<!-- Uploader -->
-					<div id="employ_letter" class="hero-unit">
+					<div id="uploadBox" class="hero-unit">
 						<a href="#" class="task_badge"></a>
 
 
@@ -204,7 +246,7 @@ include './prospectWelcome.php';
 									<option value="EL">Employment Letter</option>
 									<option value="PS">Pay Stub</option>
 									<option value="REF">References</option>
-									<option value="W2">W2</option>
+									<option value="W2">Tax Return</option>
 									</select></div><br>
 							<div> <input type="hidden" name="MAX_FILE_SIZE" value="10000000">	
 							<input type="file" name="prospectFileUploaded" id="prospectFile"></div>
@@ -216,41 +258,16 @@ include './prospectWelcome.php';
 
 					</div>
 
-					<!--
-					<h4>PayStub</h4>
-					<div id="pay_stub" class="hero-unit">
-						<a href="#" class="task_badge"></a>
-					</div>
-					<h4>Tax Return</h4>
-					<div id="tax_return" class="hero-unit">
-						<a href="#" class="task_badge"></a>
-					</div>
-					<h4>References</h4>
-					<div id="references" class="hero-unit">
-						<a href="#" class="task_badge"></a>
-					</div>
-					<h4>Bank Statement</h4>
-					<div id="bank_statement" class="hero-unit">
-						<a href="#" class="task_badge"></a>
-					</div>
-					<h4>Identification</h4>
-					<div id="photo_id" class="hero-unit">
-						<a href="#" class="task_badge"></a>
-					</div>
-					//-->
 				</div>
 			</div>
 
 		</div>
 
-
-
-		<!-- Footer 
 		<div id="footer">
 		  <div class="container">
 		    <p class="muted credit">Rentista <a href="#">Footer</a> </p>
 		  </div>
-		</div>-->
+		</div>
 
 	</div>
 	<!-- Scripts -->

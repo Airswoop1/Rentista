@@ -1,10 +1,11 @@
 <?php
 	ini_set('display_errors',1); 
  	error_reporting(E_ALL);
+	
+	session_start();
+	error_log($_SESSION['prospectID_S']);
 	include './SQL_Files/dbconnection.php';
-	
-	@session_start();
-	
+
 	//retreive variables from the prospectWelcome.php page
 	$prospectID = $_SESSION['prospectID_S']; //prospect ID
 	$uploadClass = $_POST['docUploadDropdown']; //what type of document

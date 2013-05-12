@@ -3,7 +3,6 @@
 Database Connection File
 2/7/13
 */
-
 $dbcon = null;
 $username = "airswoop1";
 $password = "kalm";

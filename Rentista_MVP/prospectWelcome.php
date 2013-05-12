@@ -1,15 +1,5 @@
-<?php session_start();?>
-<!--
-<html>
-<head>
-	<title>Prospect Upload</title>
-</head>
-<body>
-	<p>Welcome to the Rentista Prospect Upload page!</p>
-	<div><strong><a href="logoff.html">Log Off</a></strong></div>
-//-->
-
-<?php
+<?php 
+	session_start();
 	//error reporting
 	ini_set('display_errors',1); 
  	error_reporting(E_ALL);
@@ -23,6 +13,7 @@
 	if(isset($_POST['prospectID'])){
 		$prospectID = $_POST['prospectID'];
 		$_SESSION['prospectID_S'] = $prospectID;
+		error_log("set prospect ID from POST");
 	}
 	else{
 		$prospectID = $_SESSION['prospectID_S'];
@@ -181,9 +172,9 @@
 	$header = $firstname." ".$lastname."'s Notes";
 
 	if(!file_exists($file)){
-		$handle = fopen($file, 'w');
-		fwrite($handle, $header);
-		fclose($handle);
+		@$handle = fopen($file, 'w');
+		@fwrite($handle, $header);
+		@fclose($handle);
 	}
 
 	if ( isset( $_REQUEST['save'] ) && isset( $_REQUEST['editor'] ) ) {
@@ -197,9 +188,9 @@
 	}
 
 	// Open the contents of the file
-	$handle = fopen( $file, 'r' );
-	$contents = fread( $handle, filesize($file) );
-	fclose($handle);
+	@$handle = fopen( $file, 'r' );
+	@$contents = fread( $handle, filesize($file) );
+	@fclose($handle);
 
 ?>
 

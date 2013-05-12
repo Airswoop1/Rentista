@@ -1,18 +1,5 @@
-<?php session_start(); ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<html>
-<head>
-	<title>Broker Dashboard: Prospect Group Detail</title>
-</head>
-
-<body>
-<h1>Broker Dashboard</h1>
-<a href="brokerWelcome.php">Go Back</a>
-
-<h2>Prospect Group Detail</h2>
-
-<?php
+<?php 
+	session_start(); 
 	ini_set('display_errors',1); 
  	error_reporting(E_ALL);
 	include './SQL_Files/dbconnection.php';
@@ -27,31 +14,13 @@
 	$numProspects = $result->num_rows;
 
 	//check to make sure that the query returned results
-	if($numProspects<1){
-		echo "Invalid group ID!";
-		exit;
+/**	if($numProspects<1){
+		
 	}
 	else{
 		//echo the groups % complete
-		echo "<p>Group ".$groupID." is ".calcPercentComplete("group",$groupID)."% complete.</p>";
+		//echo "<p>Group ".$groupID." is ".calcPercentComplete("group",$groupID)."% complete.</p>";
 
-?>
-<table border="2" bordercolor="#FFCC00" style="background-color:#FFFFCC" 
-	width="700" cellpadding="3" cellspacing="6">
-	<tr>
-		<th>Name</th>
-		<th>Percent Complete</th>
-		<th>ID</th>
-		<th>Bank Statement 1</th>
-		<th>Bank Statement 2</th>
-		<th>Employment Letter</th>
-		<th>Pay Stub</th>
-		<th>References</th>
-		<th>W2</th>
-		<th>Action</th>
-		<th>Comments</th>
-	</tr>
-<?php
 //loop through the results of the query and generate table of each prospects information
 for($i=0;$i<$numProspects; $i++){
 	$row = $result->fetch_assoc();
@@ -119,11 +88,11 @@ for($i=0;$i<$numProspects; $i++){
 		$contents = "";
 	}
 	//print the other information about the prospect group
-	echo "<tr><td>".$row['firstname']." ".$row['lastname']."</td>
+echo "<tr><td>".$row['firstname']." ".$row['lastname']."</td>
 	<td align=\"center\">".calcPercentComplete("single",$row['p_id'])."%</td>
 	<td>".$ID."</td><td>".$BS1."</td><td>".$BS2."</td><td>".$EL."</td><td>".$PS."</td><td>".$REF."</td>
 	<td>".$W2."</td><td>";
-
+	
 	//calculate the prospects % complete and if not complete allow the broker to 
 	//nudge otherwise let them download the entire file package
 	if(calcPercentComplete("single",$row['p_id'])<100){
@@ -142,13 +111,10 @@ for($i=0;$i<$numProspects; $i++){
 	//print the notes
 	echo "</td><td>$contents</td><tr>";
 }
-}
+}**/
 ?>
 
 </table>
-
-<br>
-<input>
 
 </body>
 </html>

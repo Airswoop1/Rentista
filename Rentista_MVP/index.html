@@ -1,30 +1,114 @@
-<html>
+<?php
+session_start();
+?>
+
+ <html>
 	<head>
 		<title>Rentista Home</title>
 		<link rel="stylesheet" href="./CSS/main.css" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,600,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.fileupload-ui.css">
 	</head>
 	<body>
-			<div class="container-fluid">
+		<div class="container">
+      <header class="row">
+        <div class="span12">
+
+          <nav class="navbar" >
+            <div class="navbar-inner" style="font-weight:100; letter-spacing:2; font-family:inherit;">
+              <a href="#" class="brand" style="color:#FFFFFF; font-weight:100">rentista nyc</a>
+              
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" >
+
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+              </a>
+
+              <div class="nav-collapse collapse">
+
+              <ul class="nav" >
+                <li class="divider-vertical"></li>
+                <li><a href="#" style="color:#FFFFFF">home</a> </li>
+                <li class="divider-vertical" ></li>
+                <li><a href="#" style="color:#FFFFFF">blog</a> </li>
+                <li class="divider-vertical"></li>
+                <li><a href="#" style="color:#FFFFFF">about</a> </li>
+                <li class="divider-vertical"></li>
+              </ul>
+              </div>
+            </div>
+          </nav> <!---- NavBar ---->
+
+        </div>
+
+      </header> <!---End of Header---->
+
+			<div class="container-fluid" >
   			<div class="row-fluid">
     			<span class="span2">
      				 <img src="./assets/Rentista_Logo_SVL.jpg" class="image">
     			</span>
-    			<span class="span4">
+    			<span class="span10">
      			 	<div class="page-header">
         				<h1>rentista <em><small>A Secure Way to Rent</small></em>
         				</h1>
       				</div>
     			</span>
+
   			</div>
-		</div>
-		<table align="center">
-			<tr>
-				<td align="center"><a href="prospect.html" class="button">Prospect Logon </a></td>
-			</tr>
-			<tr>
-				<td align="center"><a href="broker.html" class="button">Broker Logon </a></td>
-			</tr>
-		</table>
+
+    <div class="row" id="main-content">
+
+        <div class="span4 offset2" id="sidebar">
+
+          <div class="well">
+
+            <form name="prospectInput" action="dashboard.php" method="POST">
+              <fieldset>
+                <legend>Prospect Login</legend>
+                <input type="text" name="prospectID" class="input-block-level" placeholder="username">
+                <input type="text" class="input-block-level" placeholder="password">
+                <label class="checkbox">
+                  <input type="checkbox">Remember Me
+                </label>
+
+                <div class="pull-right">
+                  <input type="submit" class="btn btn-primary" value="login">
+                </div>
+              </fieldset>
+
+            </form>
+
+          </div>
+
+        </div>
+        <div class="span4" id="sidebar">
+          <div class="well">
+            <form name="brokerInput" action="BrokerDashboard.php" method="POST">
+              <fieldset>
+                <legend>Broker Login</legend>
+                <input type="text" name="brokerID" class="input-block-level" placeholder="username">
+                <input type="text" class="input-block-level" placeholder="password">
+                <label class="checkbox">
+                  <input type="checkbox">Remember Me
+                </label>
+
+                <div class="pull-right">
+                  <input type="submit" class="btn btn-primary" value="login">
+                </div>
+              </fieldset>
+
+            </form>
+
+          </div>
+
+        </div>
+    </div>
+
 
 	</body>
 

@@ -18,7 +18,7 @@
 
 <h3>Zip File Creation</h3>
 
-<a href="prospectGroupStatus.php?groupID=<?php echo $groupID;?>">Go Back</a>
+<a href="brokerDashboardGroupDetail.php?groupID=<?php echo $groupID;?>">Go Back</a>
 
 <?php
 
